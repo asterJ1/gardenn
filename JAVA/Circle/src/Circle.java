@@ -8,7 +8,9 @@ public class Circle {
 		this.radius = radius;
 	}
 	//2. 매개 변수가 없는 생성자로서 원의 반지름을 0.0으로 설정한다.
-	
+	Circle() {
+		radius = 0.0;
+	}
 	//3. 설정자 메소드인 setRadius()를 작성한다.
 	void setRadius (double radius) {
 		this.radius = radius;
@@ -18,10 +20,13 @@ public class Circle {
 	return radius;	
 	}
 	//5. double형의 값을 제곱하여 반환하는 square() 메소드를 작성한다. 전용 메소드로 선언하라.
-	private double square(double n) {
+	static private double square(double n) {
 		return n * n;
 	}
 	//6. 원의 면적을 계산하는 getArea() 메소드를 작성한다.
+	double getArea() {
+		return PI * radius * radius;
+	}
 	
 	//7. 원의 둘레를 계산하는 getPerimeter() 메소드를 작성한다.
 	double getPerimeter() {
@@ -34,25 +39,10 @@ public class Circle {
 	//9. Circle 클래스 안에 main()을 추가하고 다음과 같이 square() 메소드를 호출하여 보자. 어떤 결과가 발생하가? 또 그 이유는 무엇인가?
 	public static void main(String args[]) {
 		square(10.0);
+		//9.answer: square() 메소드는 인스턴스 메소드로 선언되었기 때문에 객체를 통해서만 접근이 되므로 에러가 발생한다.
 		//10. main() 안에서 정적 메소드인 getPI()를 호출하여 보라.
 		Circle c1 = new Circle();
 		c1.square(10.0);
 		getPI();
-		//11. Circle 클래스를 테스트하기 위하여 별도의 클래스인 CircleTest 클래스를 작성하라. main() 안에서 Circle 객체를 생성하고 getArea()와 getPerimeter()를 호출하여서 원의 면적과 둘레를 구하라.
-		Circle c1 = new Circle(5.0);
-		System.out.println("원의 넓이: " + c1.getArea());
-		System.out.println("원의 둘레: " + c1.getPerimeter());
-		
-		Circle.radius = 10.0;
-		Circle.square(20.6);
-		//12. CircleTest 클래스 안에서 다음과 같이 radius를 참조하여 보라. 어떤 결과가 나오는가? 그 이유는?
-		
-		//13. 필드 radius의 수식자인 private를 제거하고 12번을 다시 하여 보자. 어떤 결과가 나오는가? 그 이유는?
-		
-		//14. 필드 radius의 수식자를 public으로 변경하고 12번을 다시 하여 보자. 어떤 결과가 나오는가? 그 이유는?
-		
-		//15. 전용 메소드인 square()를 다음과 같이 호출하여 보자. 어떤 결과가 나오는가? 그 이유는?
-		
-		
 	}
 }

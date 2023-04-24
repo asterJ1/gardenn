@@ -28,3 +28,7 @@ array = [273, 32, 103, 57, 52]
 for element in array:
     #출력합니다.
     print(element)
+
+#while 반복문: 시간을 기반으로 반복하기
+#import time
+#time.time()
